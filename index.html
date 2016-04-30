@@ -20,6 +20,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Tells the browser what the title of this page should be. -->
   <title>Resume</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Laila:300,500' rel='stylesheet'>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rancho&effect=crackle">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/basicTabs-min.js"></script>
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
@@ -38,7 +43,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   you can't accomplish with vanilla (regular) JavaScript.
   -->
   <script src="js/jQuery.js"></script>
-
+  
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
 
@@ -46,14 +51,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+ <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> 
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
-
+     
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
@@ -64,32 +68,40 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class="flex-box"></ul>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+    <div id="tabwrap">
+      <ul class="tabs">
+        <li class="current"><a href="#workExperience">Work Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#map-div">Where I've Lived and Worked</a></li>
+      </ul>
+    <div class="tab_content">
+      <div id="workExperience" class="current gray font-effect-crackle">
+        <h2>Work Experience</h2>
+      </div>
+      <div id="projects">
+        <h2 class="font-effect-crackle">Projects</h2>
+      </div>
+      <div id="education" class="font-effect-crackle gray">
+        <h2>Education</h2>
+      </div>
+      <div id="map-div">
+        <h2 class="font-effect-crackle">Where I've Lived and Worked</h2>
+      </div>
     </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="map-div">
-      <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
+      <h2 class="font-effect-crackle orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
     </div>
-  </div>
-
+    </div>
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
   writing. In resumeBuilder.js, you'll be writing code that builds the resume
   dynamically when this website, index.html, is opened.
   -->
   <script src="js/resumeBuilder.js"></script>
-
 
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
@@ -98,7 +110,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   of the resume, then that part of the resume does not show up. More on this in the
   course.
   -->
-
+  
   <script type="text/javascript">
     // Notice how all of a sudden there's JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
@@ -115,25 +127,25 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+      document.getElementById('topContacts').style.backgroundColor = "black";
     }
     if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+      document.getElementById('header').style.backgroundColor = "black";
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+      document.getElementById('workExperience').style.backgroundColor = "black";
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+      document.getElementById('projects').style.backgroundColor = "black";
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      document.getElementById('education').style.backgroundColor = "black";
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
+      document.getElementById('lets-connect').style.backgroundColor = "black";
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('map-div').style.display = 'none';
+      document.getElementById('map-div').style.backgroundColor = "black";
     }
   </script>
 </body>
